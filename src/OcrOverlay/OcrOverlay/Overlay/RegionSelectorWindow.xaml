@@ -1,0 +1,18 @@
+<Window x:Class="OcrOverlay.Overlay.RegionSelectorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="#33000000"
+        ShowInTaskbar="False"
+        Topmost="True"
+        Cursor="Cross"
+        WindowStartupLocation="Manual">
+    <Canvas x:Name="RootCanvas">
+        <Rectangle x:Name="SelectionRect"
+                   Stroke="#FF00AAFF"
+                   StrokeThickness="2"
+                   Fill="#3300AAFF"
+                   Visibility="Collapsed"/>
+    </Canvas>
+</Window>

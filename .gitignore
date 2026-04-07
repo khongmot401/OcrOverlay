@@ -1,0 +1,55 @@
+# .NET build output
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio / Rider / VS Code
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userprefs
+*.swp
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Publish output
+publish/
+PublishProfiles/
+*.pubxml.user
+
+# Rider
+*.DotSettings.user
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Test results
+TestResults/
+*.coverage
+*.coveragexml
+
+# Local config / secrets
+appsettings.Local.json
+appsettings.Development.json
+*.local.json
+secrets.json
+.env
+.env.local
+
+# Misc
+*.log
+*.tmp

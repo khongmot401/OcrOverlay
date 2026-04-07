@@ -1,0 +1,86 @@
+<Window x:Class="OcrOverlay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OcrOverlay"
+        mc:Ignorable="d"
+        Title="OcrOverlay" Height="640" Width="640">
+    <DockPanel Margin="16">
+        <StackPanel DockPanel.Dock="Top">
+            <Grid Margin="0,0,0,8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Provider:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                <ComboBox Grid.Column="1" x:Name="ProviderBox" SelectionChanged="ProviderBox_SelectionChanged"/>
+            </Grid>
+            <Grid Margin="0,0,0,12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Source:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                <ComboBox Grid.Column="1" x:Name="SourceLangBox" SelectionChanged="SourceLangBox_SelectionChanged"/>
+                <TextBlock Grid.Column="2" Text="Target:" VerticalAlignment="Center" Margin="12,0,6,0"/>
+                <ComboBox Grid.Column="3" x:Name="TargetLangBox" SelectionChanged="TargetLangBox_SelectionChanged"/>
+            </Grid>
+
+            <Button x:Name="SelectRegionButton" Padding="10" Click="SelectRegionButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Select region &amp; translate"/>
+                    <TextBlock x:Name="RegionHotkeyLabel" Text="" Foreground="Gray" Margin="6,0,0,0"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="FullScreenTranslateButton" Padding="10" Margin="0,8,0,0" Click="FullScreenTranslateButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Translate full screen"/>
+                    <TextBlock x:Name="FullScreenHotkeyLabel" Text="" Foreground="Gray" Margin="6,0,0,0"/>
+                </StackPanel>
+            </Button>
+
+            <Border Margin="0,12,0,8" Padding="8" Background="#FFF4F4F4" CornerRadius="3">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold" Text="Customize hotkeys" Margin="0,0,0,4"/>
+                    <Grid Margin="0,2,0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Region select:" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" x:Name="RegionHotkeyBox"
+                                 IsReadOnly="True" Cursor="Arrow"
+                                 PreviewKeyDown="HotkeyBox_PreviewKeyDown"
+                                 GotKeyboardFocus="HotkeyBox_GotFocus"
+                                 LostKeyboardFocus="HotkeyBox_LostFocus"
+                                 ToolTip="Click then press the desired key combo"/>
+                    </Grid>
+                    <Grid Margin="0,2,0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Full screen:" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" x:Name="FullScreenHotkeyBox"
+                                 IsReadOnly="True" Cursor="Arrow"
+                                 PreviewKeyDown="HotkeyBox_PreviewKeyDown"
+                                 GotKeyboardFocus="HotkeyBox_GotFocus"
+                                 LostKeyboardFocus="HotkeyBox_LostFocus"
+                                 ToolTip="Click then press the desired key combo"/>
+                    </Grid>
+                    <TextBlock FontSize="11" Foreground="Gray" Text="Click a box, press your key combo (must include Ctrl/Shift/Alt/Win). Changes apply immediately." TextWrapping="Wrap" Margin="0,4,0,0"/>
+                    <TextBlock Text="ESC: close overlay / cancel selection. Click overlay to dismiss." FontSize="11" Foreground="Gray"/>
+                </StackPanel>
+            </Border>
+
+            <TextBlock Text="Log" FontWeight="Bold" Margin="0,4,0,4"/>
+        </StackPanel>
+
+        <ScrollViewer x:Name="LogScroll" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="LogText" TextWrapping="Wrap" FontFamily="Consolas" FontSize="11"/>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

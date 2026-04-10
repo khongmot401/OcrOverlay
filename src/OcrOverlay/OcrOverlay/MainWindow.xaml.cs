@@ -43,6 +43,7 @@ public partial class MainWindow : Window
         InitProviderBox();
         RegionHotkeyBox.Text = _settings.HotkeyRegion;
         FullScreenHotkeyBox.Text = _settings.HotkeyFullScreen;
+        SidebarModeBox.IsChecked = _settings.SidebarMode;
         InitTrayIcon();
         Icon = AppIcon.GetImageSource();
     }
@@ -301,6 +302,12 @@ public partial class MainWindow : Window
             _settings.TargetLanguage = item.Code;
             Log($"Target: {item.Display}");
         }
+    }
+
+    private void SidebarModeBox_Changed(object sender, RoutedEventArgs e)
+    {
+        _settings.SidebarMode = SidebarModeBox.IsChecked == true;
+        Log($"Sidebar mode: {(_settings.SidebarMode ? "ON" : "OFF")}");
     }
 
     // ---------- Actions ----------

@@ -76,6 +76,10 @@
                 </StackPanel>
             </Border>
 
+            <CheckBox x:Name="SidebarModeBox" Margin="0,8,0,0"
+                     Content="Sidebar mode (show translation beside text, not on top)"
+                     Checked="SidebarModeBox_Changed" Unchecked="SidebarModeBox_Changed"/>
+
             <TextBlock Text="Log" FontWeight="Bold" Margin="0,4,0,4"/>
         </StackPanel>
 

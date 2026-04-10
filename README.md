@@ -47,7 +47,7 @@ Edit `appsettings.json` (next to the exe) for persistent defaults:
 
 ```json
 {
-  "SourceLanguage": "auto",
+  "SourceLanguage": "en",
   "TargetLanguage": "vi",
   "HotkeyRegion": "Ctrl+Shift+R",
   "HotkeyFullScreen": "Ctrl+Shift+T",

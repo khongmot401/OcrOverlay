@@ -6,4 +6,6 @@ public class AppSettings
     public string TargetLanguage { get; set; } = "vi";
     public string HotkeyRegion { get; set; } = "Ctrl+Shift+R";
     public string HotkeyFullScreen { get; set; } = "Ctrl+Shift+T";
+    public bool SidebarMode { get; set; }
+    public int OverlayMinWidth { get; set; } = 160;
 }
